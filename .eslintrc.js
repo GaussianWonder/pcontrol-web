@@ -41,11 +41,5 @@ module.exports = {
     'no-unused-vars': 0,
     'no-undef': 0,
     'no-mixed-spaces-and-tabs': 0,
-    'vue/no-v-for-template-key': [
-      'ignore',
-    ],
-    'vue/no-v-model-argument': [
-      'ignore',
-    ],
   },
 };
