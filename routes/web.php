@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\ExternalAuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,14 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+/**
+ * External Login
+ */
+Route::get('/login/google', [ExternalAuthController::class, 'redirectToGoogleLogin'])->name('login.google');
+Route::get('/api/login/google', [ExternalAuthController::class, 'handleGoogleLoginResponse'])->name('api.login.google');
+// Route::get('/login/google/set-password', [ExternalAuthController::class, 'redirectGoogleLoginPassword'])->name('login.google.new');
+// Route::post('/api/login/google/set-password', [ExternalAuthController::class, 'setGoogleLoginPassword'])->name('api.login.google.new');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

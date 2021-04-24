@@ -96,7 +96,7 @@
 
       <div class="flex items-center justify-end mt-4">
         <inertia-link
-          :href="route('login')"
+          :href="route('login.google')"
           class="underline text-sm text-gray-600 hover:text-gray-900"
         >
           Already registered?

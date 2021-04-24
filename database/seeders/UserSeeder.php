@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create([
+        User::factory()->create([ // theoretically this is an invalid user, it does not use the google login, and it has a normal bcrypted password
             'name' => 'Admin',
             'email' => 'admin@pcontrol.com',
         ]);
